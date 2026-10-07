@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <menu>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="login.html">Login</a>
+                <a href="#" id="menuContato">Contato</a>
+                <a href="#" id="menuSobre">Sobre</a>
+            </nav>
+        </menu>
+    </header>
+    
+    <main id="fundo-login">
+        <form id="meuFormulario">
+           <h1>Login</h1> 
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <input type="submit" value="Entrar">
+        </form>
+    </main>  
+    
+    <!-- ==========================================================================
+       ADICIONADO: Os blocos dos submenus que o JavaScript precisa encontrar
+       ========================================================================== -->
+    <!-- Menu de Contato -->
+    <div class="sub-menu" id="sub-contato">
+        <h2>CONTATO</h2>
+        <div class="bloco-aba">
+            <button class="aba-item" id="btn-telefone">Telefone</button>
+            <div class="conteudo-aba" id="conteudo-telefone">
+                <h3>Nosso Telefone 📞</h3>
+                <p>(11) 99999-9999<br>Atendimento de Terça a Domingo, das 18h às 23h.</p>
+            </div>
+        </div>
+        <div class="bloco-aba" style="margin-top: 15px;">
+            <button class="aba-item" id="btn-email">E-mail</button>
+            <div class="conteudo-aba" id="conteudo-email">
+                <h3>Nosso E-mail ✉️</h3>
+                <p>contato@nostrapizzaria.com<br>Respondemos em até 24 hours úteis.</p>
+            </div>
+        </div>
+    </div>  
+    
+    <!-- Aba Principal do SOBRE -->
+    <div class="sub-menu" id="sub-sobre">
+        <h2>SOBRE</h2>
+        <div class="bloco-aba">
+            <button class="aba-item" id="btn-empresa">Empresa</button>
+            <div class="conteudo-aba" id="conteudo-empresa">
+                <h3>Nossa História 🍕</h3>
+                <p>A Nostra Pizzaria nasceu da paixão pela verdadeira culinária italiana. Nossa massa fermenta por 48 horas para trazer leveza e o sabor autêntico de Nápoles direto para sua mesa.</p>
+            </div>
+        </div>
+        <div class="bloco-aba" style="margin-top: 15px;">
+            <button class="aba-item" id="btn-clientes">Clientes</button>
+            <div class="conteudo-aba" id="conteudo-clientes">
+                <h3>Portal do Cliente</h3>
+                <p>Bem-vindo à nossa família! Aqui você pode consultar seus pontos de fidelidade, resgatar cupons de desconto semanais e avaliar suas últimas pizzas solicitadas.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ========================================================================== -->
+
+    <footer>
+        <h1>© <span id="data-atual"></span> Nostra Pizzaria. Todos os direitos reservados.</h1>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

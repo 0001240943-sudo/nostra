@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Marina e Estevão" content="autor">
+    <title>Nostra Pizza</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <header>
+        <menu>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="login.html">Login</a>
+                <a href="#" id="menuContato">Contato</a>
+                <a href="#" id="menuSobre">Sobre</a>
+            </nav>
+        </menu>
+    </header>
+    <main>
+        <div class="texto-principal">
+            <h1>Benvenuti alla Nostra Pizzaria! 🍕</h1>
+                <p>Quer saborear a verdadeira tradição da Itália? Na Nostra Pizzaria, preparamos receitas autênticas com massa</p>
+                <p>de longa fermentação, bordas altas e crocantes e ingredientes selecionados de alta qualidade.</p>
+                <p>Queremos que você faça parte da nossa família. Cadastre-se agora mesmo em nosso site and garanta um cupom especial de boas-vindas</p>
+                <button class="btn-cadastro" onclick="window.location.href='cadastro.html'">Cadastre-se</button>
+        </div>
+        
+        <!-- Menu de Contato padronizado -->
+        <div class="sub-menu" id="sub-contato">
+            <h2>CONTATO</h2>
+            
+            <!-- Botão do Telefone e seu respectivo texto logo abaixo -->
+            <div class="bloco-aba">
+                <button class="aba-item" id="btn-telefone">Telefone</button>
+                <div class="conteudo-aba" id="conteudo-telefone">
+                    <h3>Nosso Telefone 📞</h3>
+                    <p>(11) 99999-9999<br>Atendimento de Terça a Domingo, das 18h às 23h.</p>
+                </div>
+            </div>
+
+            <!-- Botão do E-mail e seu respectivo texto logo abaixo -->
+            <div class="bloco-aba" style="margin-top: 15px;">
+                <button class="aba-item" id="btn-email">E-mail</button>
+                <div class="conteudo-aba" id="conteudo-email">
+                    <h3>Nosso E-mail ✉️</h3>
+                    <p>contato@nostrapizza.com<br>Respondemos em até 24 horas úteis.</p>
+                </div>
+            </div>
+        </div>  
+        
+        <!-- Aba Principal do SOBRE configurada com submenus em cascata (sanfona) -->
+        <div class="sub-menu" id="sub-sobre">
+            <h2>SOBRE</h2>
+            
+            <!-- Bloco da Empresa (Abre a história ao clicar) -->
+            <div class="bloco-aba">
+                <button class="aba-item" id="btn-empresa">Empresa</button>
+                <div class="conteudo-aba" id="conteudo-empresa">
+                    <h3>Nossa História 🍕</h3>
+                    <p>A Nostra Pizzaria nasceu da paixão pela verdadeira culinária italiana. Nossa massa fermenta por 48 horas para trazer leveza e o sabor autêntico de Nápoles direto para sua mesa.</p>
+                </div>
+            </div>
+
+            <!-- Bloco de Clientes (Abre o portal ao clicar) -->
+            <div class="bloco-aba" style="margin-top: 15px;">
+                <button class="aba-item" id="btn-clientes">Clientes</button>
+                <div class="conteudo-aba" id="conteudo-clientes">
+                    <h3>Portal do Cliente</h3>
+                    <p>Bem-vindo à nossa família! Aqui você pode consultar seus pontos de fidelidade, resgatar cupons de desconto semanais e avaliar suas últimas pizzas solicitadas.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer> 
+        <h1>© <span id="data-atual"></span> Nostra Pizzaria. Todos os direitos reservados.</h1> 
+    </footer>
+
+   <!-- Link para o seu arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
