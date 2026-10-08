@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nostra Pizza - Área do Cliente</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="ambiente">
+
+    <header>
+
+        <h1>🍕 Nostra Pizza</h1>
+
+        <nav>
+            <a href="#pizzas">Pizzas</a>
+            <a href="#promocoes">Promoções</a>
+            <a href="#combos">Combos</a>
+            <a href="#pedido">Meu pedido</a>
+        </nav>
+
+        <div class="cliente">
+            Olá, <strong id="nome-usuario">Cliente</strong>
+            <button onclick="sair()" class="btn-adicionar">Sair</button>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="boas-vindas">
+
+            <span>🍕 BENVENUTO!</span>
+
+            <h2>
+                A sua pizza começa aqui.
+            </h2>
+
+            <p>
+                Escolha seus sabores favoritos e aproveite nossas ofertas.
+            </p>
+
+        </section>
+
+
+        <section id="pizzas">
+
+            <h2>Pizzas</h2>
+
+            <div class="produtos">
+
+                <article>
+                    <div class="pizza">🍕</div>
+
+                    <h3>Margherita</h3>
+
+                    <p>
+                        Molho de tomate, mozzarella e manjericão.
+                    </p>
+
+                    <strong>R$ 42,90</strong>
+
+                    <button data-nome="Margherita" data-preco="42.90"class="btn-adicionar">Adicionar</button>
+                </article>
+
+
+                <article>
+                    <div class="pizza">🍕</div>
+
+                    <h3>Calabresa</h3>
+
+                    <p>
+                        Mozzarella, calabresa e cebola.
+                    </p>
+
+                    <strong>R$ 44,90</strong>
+
+                    <button data-nome="Calabresa" data-preco="44.90"class="btn-adicionar">Adicionar</button>
+                </article>
+
+
+                <article>
+                    <div class="pizza">🍕</div>
+
+                    <h3>Quatro Queijos</h3>
+
+                    <p>
+                        Mozzarella, provolone, parmesão e gorgonzola.
+                    </p>
+
+                    <strong>R$ 49,90</strong>
+
+                    <button data-nome="Quatro Queijos" data-preco="49.90" class="btn-adicionar">Adicionar</button>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="promocoes">
+
+            <h2>🔥 Promoções</h2>
+
+            <div class="promocao">
+
+                <div>
+                    <span>OFERTA ESPECIAL</span>
+
+                    <h3>
+                        Pizza Grande + Refrigerante
+                    </h3>
+
+                    <p>
+                        Escolha até dois sabores.
+                    </p>
+                </div>
+
+                <strong>R$ 49,90</strong>
+
+                <button data-nome="Pizza Grande + Refrigerante" data-preco="49.90"class="btn-adicionar">Adicionar</button>
+
+            </div>
+
+        </section>
+
+
+        <section id="combos">
+
+            <h2>🍕 Combos</h2>
+
+            <div class="combo">
+
+                <h3>Combo Família</h3>
+
+                <p>
+                    2 pizzas grandes + refrigerante 2L.
+                </p>
+
+                <strong>R$ 79,90</strong>
+
+                <button data-nome="Combo Família" data-preco="79.90" class="btn-adicionar">Adicionar</button>
+
+            </div>
+
+        </section>
+
+
+        <section id="pedido" class="pedido">
+
+            <h2>🛒 Meu pedido</h2>
+
+            <!-- O container abaixo receberá os itens via JavaScript -->
+            <div id="container-pedido">
+                <p>
+                    Seu pedido está vazio.
+                </p>
+            </div>
+
+            <!-- NOVO: Botão adicionado para salvar o pedido em formato .txt via classe Carrinho -->
+            <button id="btn-finalizar" onclick="meuCarrinho.finalizarPedido()" style="display: none;" class="btn-finalizar">
+                Finalizar e Salvar Pedido (.txt)
+            </button>
+
+            <button onclick="location.href='#pizzas'" class="btn-adicionar">
+                Escolher pizzas
+            </button>
+
+        </section>
+
+        <!-- Banner flutuante do aviãozinho de pizza -->
+        <div class="aviao-promocao">✈️🍕 PROMOÇÃO RELÂMPAGO: Compre 2 pizzas grandes e ganhe 1 refrigerante 2L! 🍕✈️</div>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            🍕 Nostra Pizza — A verdadeira tradição italiana.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

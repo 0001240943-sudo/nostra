@@ -162,6 +162,18 @@ main {
 .btn-cadastro:active {
     transform: scale(0.95); /* Efeito físico de clique */
 }
+.btn-adicionar {
+    padding: 15px 30px;
+    border-radius: 200px;
+    background-color: #c57171;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
 
 /* ==========================================================================
    6. FORMULÁRIO DE CADASTRO
@@ -202,3 +214,78 @@ footer h1 {
     font-weight: 600;
     color: #ffffff;           
 }
+section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* ==========================================================================
+   ANIMAÇÃO DO AVIÃOZINHO DE PROMOÇÃO RELÂMPAGO
+   ========================================================================== */
+.aviao-promocao {
+    position: fixed;
+    top: 80px; /* Posicionado logo abaixo do cabeçalho fixo */
+    left: -100%; /* Começa completamente fora da tela, do lado esquerdo */
+    white-space: nowrap; /* Garante que o texto fique em uma única linha */
+    background-color: #f1c40f; /* Cor amarela chamativa de alerta */
+    color: #1a1a1a; /* Texto escuro para alto contraste */
+    padding: 10px 20px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border-radius: 50px; /* Formato arredondado estilo pílula */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 2000; /* Fica à frente de todos os outros elementos */
+    animation: voarAviao 20s linear infinite; /* Animação contínua e infinita */
+}
+
+/* Define o trajeto do voo: cruza da esquerda para a direita */
+@keyframes voarAviao {
+    0% {
+        left: -100%; /* Fora da tela à esquerda */
+    }
+    100% {
+        left: 100%; /* Fora da tela à direita */
+    }
+}
+/* Quando o mouse pousa, altera o conteúdo para uma explosão e some instantaneamente */
+
+.aviao-promocao.explodiu {
+    animation: explodirInstantaneo 0.4s forwards !important;
+    pointer-events: none; /* Desativa novos cliques imediatamente */
+}
+
+/* Quando a classe .explodiu for injetada pelo clique, o avião sofre o efeito visual de explosão */
+.aviao-promocao.explodiu {
+    animation: efeitoExplodir 0.4s forwards !important;
+    pointer-events: none; /* Desativa novos cliques imediatamente */
+}
+
+/* Correção definitiva: Desliga o voo e aplica o efeito visual de explosão */
+.aviao-promocao.explodiu {
+    animation: none !important; /* Mata a animação de voar para não travar a explosão */
+    animation: efeitoExplodir 0.4s forwards !important; /* Executa o efeito visual */
+    pointer-events: none; /* Desativa novos cliques imediatamente */
+}
+
+/* Animação que faz o elemento mudar de cor, inflar e sumir */
+@keyframes efeitoExplodir {
+    0% {
+        background-color: #e74c3c !important; /* Muda a cor para vermelho fogo */
+        color: white !important;              /* Texto fica branco */
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5); /* Infla simulando o impacto da explosão */
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(0); /* Encolhe totalmente até sumir */
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+

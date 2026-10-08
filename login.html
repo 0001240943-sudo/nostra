@@ -1,82 +1,301 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+
+    <title>Nostra Pizzaria - Login</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- =====================================================
+         MENU SUPERIOR
+         ===================================================== -->
+
     <header>
+
         <menu>
+
             <nav>
-                <a href="index.html">Início</a>
-                <a href="login.html">Login</a>
-                <a href="#" id="menuContato">Contato</a>
-                <a href="#" id="menuSobre">Sobre</a>
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="login.html" class="ativo">
+                    Login
+                </a>
+
+                <a href="#" id="menuContato">
+                    Contato
+                </a>
+
+                <a href="#" id="menuSobre">
+                    Sobre
+                </a>
+
             </nav>
+
         </menu>
+
     </header>
-    
+
+
+    <!-- =====================================================
+         ÁREA DE LOGIN
+         ===================================================== -->
+
     <main id="fundo-login">
+
         <form id="meuFormulario">
-           <h1>Login</h1> 
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required><br><br>
 
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required><br><br>
+            <h1>
+                Login 🍕
+            </h1>
 
-            <input type="submit" value="Entrar">
+
+            <!-- USUÁRIO -->
+
+            <label for="username">
+                Usuário:
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Digite seu usuário"
+                required>
+
+
+            <!-- SENHA -->
+
+            <label for="password">
+                Senha:
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Digite sua senha"
+                required>
+
+
+            <!-- MENSAGEM -->
+
+            <p id="mensagem-login"></p>
+
+
+            <!-- BOTÃO -->
+
+            <button
+                type="submit"
+                class="btn-login">
+
+                Entrar
+
+            </button>
+
+
+            <!-- CADASTRO -->
+
+            <p class="link-cadastro">
+
+                Ainda não possui uma conta?
+
+                <a href="cadastro.html">
+                    Cadastre-se
+                </a>
+
+            </p>
+
         </form>
-    </main>  
-    
-    <!-- ==========================================================================
-       ADICIONADO: Os blocos dos submenus que o JavaScript precisa encontrar
-       ========================================================================== -->
-    <!-- Menu de Contato -->
+
+    </main>
+
+
+    <!-- =====================================================
+         MENU LATERAL - CONTATO
+         ===================================================== -->
+
     <div class="sub-menu" id="sub-contato">
-        <h2>CONTATO</h2>
+
+        <h2>
+            CONTATO 📞
+        </h2>
+
+
         <div class="bloco-aba">
-            <button class="aba-item" id="btn-telefone">Telefone</button>
-            <div class="conteudo-aba" id="conteudo-telefone">
-                <h3>Nosso Telefone 📞</h3>
-                <p>(11) 99999-9999<br>Atendimento de Terça a Domingo, das 18h às 23h.</p>
+
+            <button
+                class="aba-item"
+                id="btn-telefone">
+
+                Telefone
+
+            </button>
+
+
+            <div
+                class="conteudo-aba"
+                id="conteudo-telefone">
+
+                <h3>
+                    Nosso Telefone 📞
+                </h3>
+
+                <p>
+                    (11) 99999-9999
+                    <br>
+                    Atendimento de terça a domingo,
+                    das 18h às 23h.
+                </p>
+
             </div>
+
         </div>
-        <div class="bloco-aba" style="margin-top: 15px;">
-            <button class="aba-item" id="btn-email">E-mail</button>
-            <div class="conteudo-aba" id="conteudo-email">
-                <h3>Nosso E-mail ✉️</h3>
-                <p>contato@nostrapizzaria.com<br>Respondemos em até 24 hours úteis.</p>
+
+
+        <div
+            class="bloco-aba"
+            style="margin-top: 15px;">
+
+            <button
+                class="aba-item"
+                id="btn-email">
+
+                E-mail
+
+            </button>
+
+
+            <div
+                class="conteudo-aba"
+                id="conteudo-email">
+
+                <h3>
+                    Nosso E-mail ✉️
+                </h3>
+
+                <p>
+                    contato@nostrapizzaria.com
+                    <br>
+                    Respondemos em até 24 horas úteis.
+                </p>
+
             </div>
+
         </div>
-    </div>  
-    
-    <!-- Aba Principal do SOBRE -->
-    <div class="sub-menu" id="sub-sobre">
-        <h2>SOBRE</h2>
-        <div class="bloco-aba">
-            <button class="aba-item" id="btn-empresa">Empresa</button>
-            <div class="conteudo-aba" id="conteudo-empresa">
-                <h3>Nossa História 🍕</h3>
-                <p>A Nostra Pizzaria nasceu da paixão pela verdadeira culinária italiana. Nossa massa fermenta por 48 horas para trazer leveza e o sabor autêntico de Nápoles direto para sua mesa.</p>
-            </div>
-        </div>
-        <div class="bloco-aba" style="margin-top: 15px;">
-            <button class="aba-item" id="btn-clientes">Clientes</button>
-            <div class="conteudo-aba" id="conteudo-clientes">
-                <h3>Portal do Cliente</h3>
-                <p>Bem-vindo à nossa família! Aqui você pode consultar seus pontos de fidelidade, resgatar cupons de desconto semanais e avaliar suas últimas pizzas solicitadas.</p>
-            </div>
-        </div>
+
     </div>
-    <!-- ========================================================================== -->
+
+
+    <!-- =====================================================
+         MENU LATERAL - SOBRE
+         ===================================================== -->
+
+    <div class="sub-menu" id="sub-sobre">
+
+        <h2>
+            SOBRE
+        </h2>
+
+
+        <div class="bloco-aba">
+
+            <button
+                class="aba-item"
+                id="btn-empresa">
+
+                Empresa
+
+            </button>
+
+
+            <div
+                class="conteudo-aba"
+                id="conteudo-empresa">
+
+                <h3>
+                    Nossa História 🍕
+                </h3>
+
+                <p>
+                    A Nostra Pizzaria nasceu da paixão
+                    pela verdadeira culinária italiana.
+                    Nossa massa fermenta por 48 horas
+                    para trazer leveza e sabor autêntico
+                    de Nápoles direto para sua mesa.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="bloco-aba"
+            style="margin-top: 15px;">
+
+            <button
+                class="aba-item"
+                id="btn-clientes">
+
+                Clientes
+
+            </button>
+
+
+            <div
+                class="conteudo-aba"
+                id="conteudo-clientes">
+
+                <h3>
+                    Portal do Cliente
+                </h3>
+
+                <p>
+                    Bem-vindo à nossa família!
+                    Aqui você pode consultar seus
+                    pontos de fidelidade, resgatar
+                    cupons de desconto e avaliar
+                    suas últimas pizzas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
 
     <footer>
-        <h1>© <span id="data-atual"></span> Nostra Pizzaria. Todos os direitos reservados.</h1>
+
+        <h1>
+            © <span id="data-atual"></span>
+            Nostra Pizzaria.
+            Todos os direitos reservados.
+        </h1>
+
     </footer>
 
+
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
+```
