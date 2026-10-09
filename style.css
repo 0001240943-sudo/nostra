@@ -289,3 +289,60 @@ section {
     }
 }
 
+
+
+/* Correção pontual: manter o rodapé do login no fim da página */
+body.pagina-login {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body.pagina-login main {
+    flex: 1 0 auto;
+}
+body.pagina-login footer {
+    margin-top: auto;
+}
+
+/* Garantir que os painéis laterais possam ser abertos na página de cadastro */
+#sub-contato.active,
+#sub-sobre.active {
+    left: 0;
+}
+
+
+/* Ajustes pontuais solicitados: rodapé do login e menus laterais no cadastro */
+body.pagina-login {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body.pagina-login > main#fundo-login {
+    flex: 1 0 auto;
+}
+body.pagina-login > footer {
+    margin-top: auto;
+}
+#sub-contato.active,
+#sub-sobre.active {
+    left: 0 !important;
+    visibility: visible;
+}
+
+
+/* Ajustes solicitados: painéis laterais visíveis quando ativos nas páginas login e cadastro */
+#sub-contato.active,
+#sub-sobre.active {
+    left: 0 !important;
+    visibility: visible;
+}
+
+/* O rodapé da página de login permanece na parte inferior da janela */
+body.pagina-login {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body.pagina-login > footer {
+    margin-top: auto;
+}

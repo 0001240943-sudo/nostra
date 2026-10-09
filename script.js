@@ -140,34 +140,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // =========================
-    // MENUS LATERAIS
-    // =========================
+    // MENUS LATERAIS: usados tanto em login.html quanto em cadastro.html
     const contato = $("menuContato");
     const subContato = $("sub-contato");
     const sobre = $("menuSobre");
     const subSobre = $("sub-sobre");
 
-    function abrirMenu(botao, menu, outro) {
-        if (!botao || !menu) return;
-
-        botao.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            if (outro) outro.classList.remove("active");
-            menu.classList.toggle("active");
+    function configurarMenu(link, painel, outroPainel) {
+        if (!link || !painel) return;
+        link.addEventListener("click", function (evento) {
+            evento.preventDefault();
+            evento.stopPropagation();
+            if (outroPainel) outroPainel.classList.remove("active");
+            painel.classList.toggle("active");
         });
     }
 
-    abrirMenu(contato, subContato, subSobre);
-    abrirMenu(sobre, subSobre, subContato);
+    configurarMenu(contato, subContato, subSobre);
+    configurarMenu(sobre, subSobre, subContato);
 
-    document.addEventListener("click", function (e) {
-        if (subContato && !subContato.contains(e.target) && e.target !== contato) {
+    document.addEventListener("click", function (evento) {
+        if (subContato && !subContato.contains(evento.target) && evento.target !== contato) {
             subContato.classList.remove("active");
         }
-        if (subSobre && !subSobre.contains(e.target) && e.target !== sobre) {
+        if (subSobre && !subSobre.contains(evento.target) && evento.target !== sobre) {
             subSobre.classList.remove("active");
         }
     });
@@ -213,11 +209,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 endereco: endereco.value.trim()
             };
 
+            // Mantém o cadastro em JSON no navegador, como já era feito.
             localStorage.setItem("cadastroUsuario", JSON.stringify(dadosUsuario));
 
             if (localStorage.getItem("cadastroUsuario")) {
-                alert("Cadastro realizado com sucesso! Dados salvos em formato JSON.");
+                // Acrescenta o download em TXT sem alterar o funcionamento do login.
+                const conteudoTXT = [
+                    "NOSTRA PIZZARIA - CADASTRO",
+                    "--------------------------",
+                    `Nome: ${dadosUsuario.nome}`,
+                    `E-mail: ${dadosUsuario.email}`,
+                    `CPF: ${dadosUsuario.cpf}`,
+                    `Endereço: ${dadosUsuario.endereco}`,
+                    `Data do cadastro: ${new Date().toLocaleString("pt-BR")}`
+                ].join("\\n");
+
+                const arquivoTXT = new Blob(["\\uFEFF", conteudoTXT], {
+                    type: "text/plain;charset=utf-8"
+                });
+                const urlTXT = URL.createObjectURL(arquivoTXT);
+                const linkTXT = document.createElement("a");
+                linkTXT.href = urlTXT;
+                linkTXT.download = "Cadastro_NostraPizza.txt";
+                document.body.appendChild(linkTXT);
+                linkTXT.click();
+                linkTXT.remove();
+                setTimeout(() => URL.revokeObjectURL(urlTXT), 1000);
+
+                alert("Cadastro salvo em JSON e arquivo TXT baixado. Você será direcionado para a página de login.");
                 formulario.reset();
+                window.location.href = "login.html";
             } else {
                 alert("Erro ao salvar o cadastro.");
             }
